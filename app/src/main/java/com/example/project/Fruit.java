@@ -18,6 +18,6 @@ public class Fruit {
     @NonNull
     @Override
     public String toString(){
-        return "Viken färg har en " + name;
+        return "Viken färg har en " + name + "?";
     }
 }
