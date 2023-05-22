@@ -12,12 +12,12 @@ public class Fruit {
     }
 
     public String info(){
-        return name + " is located in " + category;
+        return name + " är " + category + ".";
     }
 
     @NonNull
     @Override
     public String toString(){
-        return name;
+        return "Viken färg har en " + name;
     }
 }

@@ -23,6 +23,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+@SuppressWarnings("FieldCanBeLocal")
 public class MainActivity extends AppCompatActivity implements JsonTask.JsonTaskListener {
 
     private final String JSON_URL = "https://mobprog.webug.se/json-api?login=a22albjo";
@@ -98,14 +99,17 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         }.getType();
         ArrayList<Fruit> items = gson.fromJson(json, type);
 
-        adapter = new RecyclerViewAdapter(this, items, item -> Toast.makeText(MainActivity.this, item.info(), Toast.LENGTH_SHORT).show());
+        adapter = new RecyclerViewAdapter(this, items, new RecyclerViewAdapter.OnClickListener() {
+            @Override
+            public void onClick(Fruit item) {
+                Toast.makeText(MainActivity.this, item.info(), Toast.LENGTH_SHORT).show();
+            }
+        });
         adapter.notifyDataSetChanged();
 
         RecyclerView view = findViewById(R.id.recyclerview);
         view.setLayoutManager(new LinearLayoutManager(this));
         view.setAdapter(adapter);
     }
-
-}
 
 }
