@@ -11,7 +11,7 @@ att få fram det rätta svaret och säkerställa att det man svarat stämmer.
 Under arbetet med projektet har tekniska problem vart närvarande där emulatorn
 tidvis inte fungerat och gradle versionen ställt till problem samt att emulatorns internet
 uppkoppling tidvis inte fungerat. Det har gjort att jag gjort om mitt projekt ett flertal
-gånger, att mina commits ligger nära varandra i tid.
+gånger och att mina commits ligger nära varandra i tid. 
 
 ##Implementation
 ###Layout
