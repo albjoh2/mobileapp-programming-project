@@ -9,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,9 +55,9 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
         private final LayoutInflater layoutInflater;
         private final OnClickListener onClickListener;
-        private final List<Fruit> items;
+        private final List<Question> items;
 
-        RecyclerViewAdapter(Context context, List<Fruit> items, OnClickListener onClickListener) {
+        RecyclerViewAdapter(Context context, List<Question> items, OnClickListener onClickListener) {
             this.layoutInflater = LayoutInflater.from(context);
             this.items = items;
             this.onClickListener = onClickListener;
@@ -96,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         }
 
         public interface OnClickListener {
-            void onClick(Fruit item);
+            void onClick(Question item);
         }
     }
 
@@ -108,13 +107,13 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
 
 
         Gson gson = new Gson();
-        Type type = new TypeToken<List<Fruit>>() {
+        Type type = new TypeToken<List<Question>>() {
         }.getType();
-        ArrayList<Fruit> items = gson.fromJson(json, type);
+        ArrayList<Question> items = gson.fromJson(json, type);
 
         adapter = new RecyclerViewAdapter(this, items, new RecyclerViewAdapter.OnClickListener() {
             @Override
-            public void onClick(Fruit item) {
+            public void onClick(Question item) {
                 Toast.makeText(MainActivity.this, item.info(), Toast.LENGTH_SHORT).show();
             }
         });

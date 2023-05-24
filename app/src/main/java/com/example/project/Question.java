@@ -2,14 +2,14 @@ package com.example.project;
 
 import androidx.annotation.NonNull;
 
-public class Fruit {
+public class Question {
     private final String name;
     private final String category;
     private final Number size;
     private final String type;
     private final String ID;
 
-    public Fruit(String inName, String inLocation, Number inSize, String inType, String inID){
+    public Question(String inName, String inLocation, Number inSize, String inType, String inID){
         name = inName;
         category = inLocation;
         size = inSize;

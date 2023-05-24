@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textSize="24dp"
+        android:textSize="48dp"
         app:layout_constraintBottom_toTopOf="@+id/recyclerview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,14 +68,16 @@
         />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:srcCompat="@drawable/namnl_st_1"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="443dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerview"
-        app:srcCompat="@drawable/namnl_st_1" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerview"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

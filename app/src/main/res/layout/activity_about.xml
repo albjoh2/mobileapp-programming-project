@@ -60,7 +60,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:textAlignment="center"
-        android:text="Detta är en app där små barn kan lära sig färgerna på vanliga fukter, applikationen är byggd för att vara enkel att navigera. Säg färgen på frukten högt och tryck sedan på frukten i listan för att se det rätta svaret. Spela tillsammans med barnen och ha en mysig stund. Det är alltid roligt att lära sig nya saker."
+        android:text="Detta är en app är riktad till studenter som vill göra repitativ träning inför en tenta. Applikationen är byggd för att vara enkel att navigera och snabb att använda. Säg svaret på frågan högt och tryck sedan på frågan i listan för att se det rätta svaret. Det är lika roligt som viktigt att lära sig nya saker!"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
