@@ -50,61 +50,11 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         new JsonTask(this).execute(JSON_URL);
     }
 
-    public static class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
-
-
-        private final LayoutInflater layoutInflater;
-        private final OnClickListener onClickListener;
-        private final List<Question> items;
-
-        RecyclerViewAdapter(Context context, List<Question> items, OnClickListener onClickListener) {
-            this.layoutInflater = LayoutInflater.from(context);
-            this.items = items;
-            this.onClickListener = onClickListener;
-        }
-
-        @Override
-        @NonNull
-        public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            return new ViewHolder(layoutInflater.inflate(R.layout.recyclerviewitem, parent, false));
-        }
-
-        @Override
-        public void onBindViewHolder(ViewHolder holder, int position) {
-            holder.title.setText(items.get(position).toString());
-        }
-
-        @Override
-        public int getItemCount() {
-            return items.size();
-        }
-
-        public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-            TextView title;
-
-            ViewHolder(View itemView) {
-                super(itemView);
-                itemView.setOnClickListener(this);
-                title = itemView.findViewById(R.id.title);
-            }
-
-            @Override
-            public void onClick(View view) {
-                onClickListener.onClick(items.get(getAdapterPosition()));
-            }
-        }
-
-        public interface OnClickListener {
-            void onClick(Question item);
-        }
-    }
 
     @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onPostExecute(String json) {
         Log.d("MainActivity", json);
-        // Create GSON object to perform marshall/unmarshall operations
-
 
         Gson gson = new Gson();
         Type type = new TypeToken<List<Question>>() {
@@ -114,7 +64,7 @@ public class MainActivity extends AppCompatActivity implements JsonTask.JsonTask
         adapter = new RecyclerViewAdapter(this, items, new RecyclerViewAdapter.OnClickListener() {
             @Override
             public void onClick(Question item) {
-                Toast.makeText(MainActivity.this, item.info(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, item.info(), Toast.LENGTH_LONG).show();
             }
         });
         adapter.notifyDataSetChanged();
